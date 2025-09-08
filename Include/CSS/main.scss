@@ -1,0 +1,1183 @@
+
+:root {
+    --nav--color-- : #000000e5;
+    --nav--color--light--: #ffffffbb;
+    --footer--color-- : #000000e7;
+    --footer--color--light--: #ffffff6d;
+    --popdown--color--: #000000;
+    --popdown--color--light--: #ffffffbb;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+    width: 100%;
+    min-height: 100%;
+}
+
+div.nav-frame.dark#desktop-nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:99999999999999999;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    background-color: var(--nav--color--);
+    /**border-bottom: #ffffff9e solid 1px;**/
+    #nav{
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 40px;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        #logo-frame{
+            padding: 2px 2px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            #logo-dark{
+                display: flex;
+                flex-direction: row;
+            }
+            #logo-light{
+                display: none;
+            }
+        }
+        #nav-middle{
+            display: flex;
+            width: 404px;
+            justify-content: space-between;
+            .link-stack{
+                display: flex;
+                .line-stack-button{
+                    font-family:"Source Sans Pro Topnav", sans-serif;
+                    font-weight:600;
+                    color: white;
+                    border:none;
+                    font-size:16px;
+                    border-radius: 90px;
+                    height:100%;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    background-color: transparent;
+                    transition: background-color 0.15s ease-in-out;
+                    
+                }
+                .pop-over-gap{
+                    display: none;
+                    position: absolute;
+                    top:46px;
+                    left:163px;
+                    width: 105px;
+                    height: 12px;
+                    background-color: #ffffff00;
+                }
+                .pop2.pop-over-gap{
+                    left:278px;
+                }
+                .popover-frame{
+                    transition:all 0.1s ease;
+                    opacity:0;
+                    pointer-events: none;
+                    display: flex;
+                    position: absolute;
+                    top:48px;
+                    left:163px;
+                    background: var(--popdown--color--);
+                    border: none;
+                    border-radius:8px;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    border:none;
+                    .popover{
+                        padding: 4px 4px 4px 4px;
+                        .popover-div{
+                            width:262px;
+                            height:116px;
+                            padding: 24px 24px 24px 24px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            a{
+                                text-decoration: none;
+                                width:100%;
+                                color:#4981f0;
+                                font-family: "Source Sans Pro Topnav", sans-serif;
+                                font-weight:600;
+                                display:flex;
+                                flex-direction: row;
+                            }
+                            a:hover{
+                                color:white;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                .pop2.popover-frame{
+                    position: absolute;
+                    left:283px;
+                }
+                .line-stack-button:hover{
+                    cursor: pointer;
+                    background-color: #36444f;
+                }
+                background-color: transparent;
+            }
+            .link-stack:hover .popover-frame,
+            .popover-frame:hover{
+              opacity: 1;
+              transition: all 0.2s ease;
+              transform: translate(0px, 8px);
+              pointer-events: auto;
+            }
+            
+            
+            .link-stack:hover .pop-over-gap{
+                display: block;
+            }
+        }
+        #gap.logged-out{
+            height:40px;
+            width: calc(100vw - ((((((16px + 16px) + 146.84px) + 404px) + 255px))));
+        }
+        #gap.logged-in{
+            height:40px;
+            width: calc(100vw - ((((((16px + 16px) + 146.84px) + 404px) + 187px))));
+        }
+        #nav-end-frame.logged-out{
+            width: 255px;
+        }
+        #nav-end-frame.logged-in{
+            width: 187px;
+        }
+        #nav-end-frame{
+            display: flex;
+            justify-content: right;
+            #nav-end{
+                width: 100%;
+                height: 100%;
+                justify-content: space-between;
+                display: flex;
+                #mode-icon-frame{
+                    display: flex;
+                    flex-direction: column;
+                    height:40px;
+                    button{
+                        height: 100%;
+                        width: 50px;
+                        margin-right: 10px;
+                        border: none;
+                        border-radius: 25px;
+                        span{
+                            width: 100%;
+                        } 
+                    }
+                    #dark-mode-button{
+                        display: block;
+                        background-color: transparent;
+                        transition: background-color 0.2s ease;
+                    }
+                    #dark-mode-button:hover{
+                        background-color: #36444f;
+                        cursor: pointer;
+                    }
+                    #light-mode-button{
+                        display: none;
+                    }
+                }
+                .link-stack-normal.logged-in{
+                    display: none;
+                }
+                .link-stack-normal{
+                    padding-left: 2px;
+                    padding-right: 4px;
+                    .line-stack-button{
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: white;
+                        border:none;
+                        font-size:16px;
+                        border-radius: 9px;
+                        height:40px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                        background-color: #b75fcf;
+                        transition: background-color 0.15s ease-in-out;
+                    }
+                    .line-stack-button:hover{
+                        cursor: pointer;
+                        background-color: #6e4297;
+                    }
+                    
+                    background-color: transparent;
+                } 
+                .account-menu.link-stack.logged-out{
+                    display: none;
+                }
+                .account-menu.link-stack.logged-in{
+                    padding-left: 2px;
+                    padding-right: 4px;
+                    .line-stack-button{
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: white;
+                        border:none;
+                        font-size:16px;
+                        border-radius: 9px;
+                        height:40px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                        background-color: #b75fcf;
+                        transition: background-color 0.25s ease;
+                        transition: color 0.1s ease;
+                    }
+                    .line-stack-button:hover{
+                        cursor: pointer;
+                        background-color: #6e4297;
+                    }
+                }
+                .account-menu.link-stack{
+                    .pop-over-gap{
+                        display: none;
+                        position: absolute;
+                        top:46px;
+                        right: 0px;
+                        width: 160px;
+                        height: 12px;
+                        background-color: #ffffff00;
+                    }
+                    
+                    .popover-frame{
+                        transition:all 0.1s ease;
+                        opacity:0;
+                        pointer-events: none;
+                        display: flex;
+                        position: absolute;
+                        top:48px;
+                        right: 1px;
+                        background: var(--popdown--color--);
+                        border: none;
+                        border-radius:8px;
+                        border-top-left-radius: 0px;
+                        border-top-right-radius: 0px;
+                        border:none;
+                        .popover{
+                            padding: 4px 4px 4px 4px;
+                            .popover-div{
+                                width:160px;
+                                height:116px;
+                                padding: 24px 24px 24px 24px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                align-items: flex-end;
+                                a{
+                                    text-decoration: none;
+                                    width:100%;
+                                    color:#4981f0;
+                                    font-family: "Source Sans Pro Topnav", sans-serif;
+                                    font-weight:600;
+                                    display: block;
+                                    text-align: right;
+                                }
+                                a:hover{
+                                    color:white;
+                                    text-decoration: underline;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+                .link-stack:hover .popover-frame,
+                .popover-frame:hover{
+                  opacity: 1 !important;
+                  transition: all 0.2s ease;
+                  transform: translate(0px, 8px);
+                  pointer-events: auto !important;
+                }
+                .link-stack:hover .pop-over-gap{
+                    display: block !important;
+                }
+            }
+            
+        }
+    }   
+}
+
+div.nav-frame.light#desktop-nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index:99999999999999999;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    background-color: var(--nav--color--light--);
+    #nav{
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 40px;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        #logo-frame{
+            padding: 2px 2px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            #logo-light{
+                display: flex;
+                flex-direction: row;
+            }
+            #logo-dark{
+                display: none;
+            }
+        }
+        #nav-middle{
+            display: flex;
+            width: 404px;
+            justify-content: space-between;
+            .link-stack{
+                display: flex;
+                .line-stack-button{
+                    font-family:"Source Sans Pro Topnav", sans-serif;
+                    font-weight:600;
+                    color: black;
+                    border:none;
+                    font-size:16px;
+                    border-radius: 90px;
+                    height:100%;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    background-color: transparent;
+                    transition: background-color 0.15s ease-in-out;
+                    
+                }
+                .pop-over-gap{
+                    display: none;
+                    position: absolute;
+                    top:46px;
+                    left:163px;
+                    width: 105px;
+                    height: 12px;
+                    background-color: #ffffff00;
+                }
+                .pop2.pop-over-gap{
+                    left:278px;
+                }
+                .popover-frame{
+                    transition:all 0.1s ease;
+                    opacity:0;
+                    pointer-events: none;
+                    display: flex;
+                    position: absolute;
+                    top:48px;
+                    left:163px;
+                    background: var(--popdown--color--light--);
+                    border: none;
+                    border-radius:8px;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    border: #ffffff9e solid 1px;
+                    border-top:none;
+                    .popover{
+                        padding: 4px 4px 4px 4px;
+                        .popover-div{
+                            width:262px;
+                            height:116px;
+                            padding: 24px 24px 24px 24px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            a{
+                                text-decoration: none;
+                                width:100%;
+                                color:#4981f0;
+                                font-family: "Source Sans Pro Topnav", sans-serif;
+                                font-weight:600;
+                                display:flex;
+                                flex-direction: row;
+                            }
+                            a:hover{
+                                color:black;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                .pop2.popover-frame{
+                    position: absolute;
+                    left:283px;
+                }
+                .line-stack-button:hover{
+                    cursor: pointer;
+                    background-color: #d1cbf3;
+                }
+                background-color: transparent;
+            }
+            .link-stack:hover .popover-frame,
+            .popover-frame:hover{
+              opacity: 1;
+              transition: all 0.2s ease;
+              transform: translate(0px, 8px);
+              pointer-events: auto;
+            }
+            
+            
+            .link-stack:hover .pop-over-gap{
+                display: block;
+            }
+        }
+        #gap.logged-out{
+            height:40px;
+            width: calc(100vw - ((((((16px + 16px) + 146.84px) + 404px) + 255px))));
+        }
+        #gap.logged-in{
+            height:40px;
+            width: calc(100vw - ((((((16px + 16px) + 146.84px) + 404px) + 187px))));
+        }
+        #nav-end-frame.logged-out{
+            width: 255px;
+        }
+        #nav-end-frame.logged-in{
+            width: 187px;
+        }
+        #nav-end-frame{
+            display: flex;
+            justify-content: right;
+            #nav-end{
+                width: 100%;
+                height: 100%;
+                justify-content: space-between;
+                display: flex;
+                #mode-icon-frame{
+                    display: flex;
+                    flex-direction: column;
+                    height:40px;
+                    button{
+                        height: 100%;
+                        width: 50px;
+                        margin-right: 10px;
+                        border: none;
+                        border-radius: 25px;
+                        span{
+                            width: 100%;
+                        } 
+                    }
+                    #light-mode-button{
+                        display: block;
+                        background-color: transparent;
+                        transition: background-color 0.2s ease;
+                    }
+                    #light-mode-button:hover{
+                        background-color: #d1cbf3;
+                        cursor: pointer;
+                    }
+                    #dark-mode-button{
+                        display: none;
+                    }
+                }
+                .link-stack-normal.logged-out{
+                    padding-left: 2px;
+                    padding-right: 4px;
+                    .line-stack-button{
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: white;
+                        border:none;
+                        font-size:16px;
+                        border-radius: 9px;
+                        height:40px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                        background-color: #433dbd;
+                        transition: background-color 0.25s ease;
+                        transition: color 0.1s ease;
+                    }
+                    .line-stack-button:hover{
+                        cursor: pointer;
+                        background-color: #d1cbf3;
+                        color: black;
+                    }
+                }
+                .link-stack-normal.logged-in{
+                    display: none;
+                }
+                .account-menu.logged-out{
+                    display: none;
+                }   
+                .account-menu{
+                    
+                    padding-left: 2px;
+                    padding-right: 4px;
+                    .line-stack-button{
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: white;
+                        border:none;
+                        font-size:16px;
+                        border-radius: 9px;
+                        height:40px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                        background-color: #433dbd;
+                        transition: background-color 0.25s ease;
+                        transition: color 0.1s ease;
+                    }
+                    .line-stack-button:hover{
+                        cursor: pointer;
+                        background-color: #d1cbf3;
+                        color: black;
+                    }
+                }
+                .account-menu.link-stack{
+                    .pop-over-gap{
+                        display: none;
+                        position: absolute;
+                        top:46px;
+                        right: 0px;
+                        width: 160px;
+                        height: 12px;
+                        background-color: #ffffff00;
+                    }
+                    
+                    .popover-frame{
+                        transition:all 0.1s ease;
+                        opacity:0;
+                        pointer-events: none;
+                        display: flex;
+                        position: absolute;
+                        top:48px;
+                        right: 1px;
+                        background: var(--popdown--color--light--);
+                        border: none;
+                        border-radius:8px;
+                        border-top-left-radius: 0px;
+                        border-top-right-radius: 0px;
+                        border:none;
+                        .popover{
+                            padding: 4px 4px 4px 4px;
+                            .popover-div{
+                                width:160px;
+                                height:116px;
+                                padding: 24px 24px 24px 24px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                align-items: flex-end;
+                                a{
+                                    text-decoration: none;
+                                    width:100%;
+                                    color:#4981f0;
+                                    font-family: "Source Sans Pro Topnav", sans-serif;
+                                    font-weight:600;
+                                    display: block;
+                                    text-align: right;
+                                }
+                                a:hover{
+                                    color:black;
+                                    text-decoration: underline;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+                .link-stack:hover .popover-frame,
+                .popover-frame:hover{
+                  opacity: 1 !important;
+                  transition: all 0.2s ease;
+                  transform: translate(0px, 8px);
+                  pointer-events: auto !important;
+                }
+                .link-stack:hover .pop-over-gap{
+                    display: block !important;
+                }
+            }
+            
+        }
+    }   
+}
+
+
+div#nav-and-sub-menu.dark{
+    div.nav-frame#mobile-nav{
+        display: none;
+        z-index:99999999999999999;
+        height: 56px;
+        align-items: center;
+        width: 100%;
+        background-color: var(--nav--color--);
+        border-bottom: none;
+        #nav{
+            padding-left: 16px;
+            padding-right: 16px;
+            height: 40px;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            #logo-frame{
+                padding: 2px 2px;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                #logo{
+                    display: flex;
+                    flex-direction: row;
+                    #LOGO_LIGHT{
+                        display: none;
+                    }
+                    #LOGO_DARK{
+                        display: block;
+                    }
+                }
+            }
+            #menu-icon-frame{
+
+                #DARK_MENU_ICON{
+                    display: block;
+                }
+                #LIGHT_MENU_ICON{
+                    display: none;
+                }
+                #open-menu-button{
+                    height: 100%;
+                    width: 40px;
+                    margin-right: 10px;
+                    border: none;
+                    border-radius: 25px;
+                    background-color: transparent;
+                    justify-content: center;
+                    background-color: transparent;
+                    transition: background-color 0.2s ease;
+                    span{
+                        width:24px;
+                        height: 24px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        margin: auto;
+                        img{
+                            width: 24px;
+                        }
+                    }
+                }
+                #open-menu-button:hover{
+                    background-color: #36444f;
+                    cursor: pointer;
+                }
+                #close-menu-button{
+                    display: none;
+                }
+            }
+        }
+    }  
+    #sub-menu{
+        z-index: 99999999999;
+        position: fixed;
+        top:56px;
+        left: 0px;
+        width:100dvw;
+        height: 100dvh;
+        background-color: var(--nav--color--);
+    }
+}
+
+div#nav-and-sub-menu.light{
+    div.nav-frame#mobile-nav{
+        display: none;
+        z-index:99999999999999999;
+        height: 56px;
+        align-items: center;
+        width: 100%;
+        background-color: var(--nav--color--light--);
+        border-bottom: none;
+        #nav{
+            padding-left: 16px;
+            padding-right: 16px;
+            height: 40px;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            #logo-frame{
+                padding: 2px 2px;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                #logo{
+                    display: flex;
+                    flex-direction: row;
+                    #LOGO_LIGHT{
+                        display: block;
+                    }
+                    #LOGO_DARK{
+                        display: none;
+                    }
+                }
+            }
+            #menu-icon-frame{
+
+                #DARK_MENU_ICON{
+                    display: none;
+                }
+                #LIGHT_MENU_ICON{
+                    display: block;
+                }
+                #open-menu-button{
+                    height: 100%;
+                    width: 40px;
+                    margin-right: 10px;
+                    border: none;
+                    border-radius: 25px;
+                    background-color: transparent;
+                    justify-content: center;
+                    background-color: transparent;
+                    transition: background-color 0.2s ease;
+                    span{
+                        width:24px;
+                        height: 24px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        margin: auto;
+                        img{
+                            width: 24px;
+                        }
+                    }
+                }
+                #open-menu-button:hover{
+                    background-color: #d1cbf3;
+                    cursor: pointer;
+                }
+                #close-menu-button{
+                    display: none;
+                }
+            }
+        }
+    }    
+}
+
+#page{
+    flex: 1 0 auto;
+    margin-top: 56px;
+    
+}
+
+
+#desktop-footer-950px #footer-limit{
+    flex-shrink: 0;
+    #footer-master-frame.dark{
+        border-top: #0a0a0a9e solid 1px;
+        background-color: var(--footer--color--);
+        div#footerframe.desktop-foot{
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: transparent;
+            padding: 20px/*top*/ 20px;
+            #footer {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                #links{
+                    margin: none;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 25% 25% 25% 25%;
+                    .columndiv{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                    }
+                    .columns{
+                        width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        gap: 10px;
+                        h3{
+                            margin:0;
+                            padding:0;
+                            font-family:"Source Sans Pro Topnav", sans-serif;
+                            font-weight:600;
+                            color: white;
+                            -webkit-user-selct: none;
+                            -moz-user-select: none;
+                            -ms-user-select:none;
+                            user-select:none;
+                        }
+                        ul{
+                            margin:0;
+                            padding:0;
+                            li{
+                                list-style-type: none;
+                                margin-left: 6px;
+                                a{
+                                    text-decoration: none;
+                                    font-family:"Source Sans Pro Topnav", sans-serif;
+                                    font-weight: 600;
+                                    color: #4981f0;
+                                    font-size: 17px;
+                                }
+                                a:hover{
+                                    color: white;
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                            }
+                            li.padding{
+                                margin-top:5px;
+                            }
+                        }
+                    }
+                }
+                div#copyright{
+                    width:100%;
+                    p{
+                        text-align: right;
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: white;  
+                        -webkit-user-selct: none;
+                        -moz-user-select: none;
+                        -ms-user-select:none;
+                        user-select:none;         
+                        margin: 0;
+                        padding: 0;
+                    }
+                    margin-bottom: 100px;
+                }
+            }
+
+        }
+    }
+    #footer-master-frame.light{
+        border-top: #fffffff6 solid 1px;
+        background-color: var(--footer--color--light--);
+        div#footerframe.desktop-foot{
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: transparent;
+            padding: 20px/*top*/ 20px;
+            #footer {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                #links{
+                    margin: none;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 25% 25% 25% 25%;
+                    
+                    .columndiv{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                    }
+                    .columns{
+                        width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        gap: 10px;
+                        h3{
+                            margin:0;
+                            padding:0;
+                            font-family:"Source Sans Pro Topnav", sans-serif;
+                            font-weight:600;
+                            color: black;
+                            -webkit-user-selct: none;
+                            -moz-user-select: none;
+                            -ms-user-select:none;
+                            user-select:none;
+                        }
+                        ul{
+                            margin:0;
+                            padding:0;
+                            li{
+                                list-style-type: none;
+                                margin-left: 6px;
+                                a{
+                                    text-decoration: none;
+                                    font-family:"Source Sans Pro Topnav", sans-serif;
+                                    font-weight: 600;
+                                    color: #4981f0;
+                                    font-size: 17px;
+                                }
+                                a:hover{
+                                    color: black;
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                            }
+                            li.padding{
+                                margin-top:5px;
+                            }
+                        }
+                    }
+                }
+                div#copyright{
+                    width:100%;
+                    p{
+                        text-align: right;
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: black;  
+                        -webkit-user-selct: none;
+                        -moz-user-select: none;
+                        -ms-user-select:none;
+                        user-select:none;         
+                        margin: 0;
+                        padding: 0;
+                    }
+                    margin-bottom: 100px;
+                }
+            }
+
+        }
+    }
+}
+
+#footer-0px{
+    flex-shrink: 0;
+    display: none;
+    
+    #footer-master-frame.dark{
+        border-top: #0a0a0a9e solid 1px;
+        background-color: var(--footer--color--);
+        div#footerframe.mobile-foot{
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: transparent;
+            padding: 20px/*top*/ 20px;
+            #footer {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                #links{
+                    margin: none;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    grid-template-rows: 50% 50%;
+                    .columndiv{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                    }
+                    .columns{
+                        width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        gap: 10px;
+                        margin-top: 25px;
+                        h3{
+                            margin:0;
+                            padding:0;
+                            font-family:"Source Sans Pro Topnav", sans-serif;
+                            font-weight:600;
+                            color: white;
+                            -webkit-user-selct: none;
+                            -moz-user-select: none;
+                            -ms-user-select:none;
+                            user-select:none;
+                        }
+                        ul{
+                            margin:0;
+                            padding:0;
+                            li{
+                                list-style-type: none;
+                                margin-left: 6px;
+                                a{
+                                    text-decoration: none;
+                                    font-family:"Source Sans Pro Topnav", sans-serif;
+                                    font-weight: 600;
+                                    color: #4981f0;
+                                    font-size: 17px;
+                                }
+                                a:hover{
+                                    color: white;
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                            }
+                            li.padding{
+                                margin-top:5px;
+                            }
+                        }
+                    }
+                }
+                div#copyright{
+                    width:100%;
+                    p{
+                        text-align: right;
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: white;  
+                        -webkit-user-selct: none;
+                        -moz-user-select: none;
+                        -ms-user-select:none;
+                        user-select:none;         
+                        margin: 0;
+                        padding: 0;
+                    }
+                    margin-bottom: 100px;
+                }
+            }
+
+        }
+    }
+    #footer-master-frame.light{
+        border-top: #fffffff6 solid 1px;
+        background-color: var(--footer--color--light--);
+        div#footerframe.mobile-foot{
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: transparent;
+            padding: 20px/*top*/ 20px;
+            #footer {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                #links{
+                    margin: none;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    grid-template-rows: 50% 50%;
+                    
+                    .columndiv{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                    }
+                    .columns{
+                        width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        gap: 10px;
+                        margin-top: 25px;
+                        h3{
+                            margin:0;
+                            padding:0;
+                            font-family:"Source Sans Pro Topnav", sans-serif;
+                            font-weight:600;
+                            color: black;
+                            -webkit-user-selct: none;
+                            -moz-user-select: none;
+                            -ms-user-select:none;
+                            user-select:none;
+                        }
+                        ul{
+                            margin:0;
+                            padding:0;
+                            li{
+                                list-style-type: none;
+                                margin-left: 6px;
+                                a{
+                                    text-decoration: none;
+                                    font-family:"Source Sans Pro Topnav", sans-serif;
+                                    font-weight: 600;
+                                    color: #4981f0;
+                                    font-size: 17px;
+                                }
+                                a:hover{
+                                    color: black;
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                                }
+                            }
+                            li.padding{
+                                margin-top:5px;
+                            }
+                        }
+                    }
+                }
+                div#copyright{
+                    width:100%;
+                    p{
+                        text-align: right;
+                        font-family:"Source Sans Pro Topnav", sans-serif;
+                        font-weight:600;
+                        color: black;  
+                        -webkit-user-selct: none;
+                        -moz-user-select: none;
+                        -ms-user-select:none;
+                        user-select:none;         
+                        margin: 0;
+                        padding: 0;
+                    }
+                    margin-bottom: 100px;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+@media(max-width: 850px){
+    #desktop-footer-950px #footer-master-frame.dark,
+    #desktop-footer-950px #footer-master-frame.light{
+        display: none;
+    }
+    #footer-0px{
+        display: block;
+    }
+}
+
+@media (max-width: 430px) {
+    #footer-0px #footer-master-frame.dark #footerframe.mobile-foot #footer #links,
+    #footer-0px #footer-master-frame.light #footerframe.mobile-foot #footer #links {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(4, auto) !important;
+    }
+
+    #footer-0px #footer-master-frame.dark #footerframe.mobile-foot #footer #links .columndiv,
+    #footer-0px #footer-master-frame.light #footerframe.mobile-foot #footer #links .columndiv {
+        width: 100%;
+    }
+}
+
+@media(max-width: 850px){
+    div.nav-frame.dark#desktop-nav,
+    div.nav-frame.light#desktop-nav{
+        display: none;
+    }
+    div#nav-and-sub-menu.switch-color-mode div.nav-frame#mobile-nav {
+        display: flex;
+        z-index: 99999999999999999;
+        position: fixed ;
+        top: 0 ;
+        left: 0 ;
+    }
+    
+}

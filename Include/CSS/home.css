@@ -1,0 +1,15 @@
+
+
+body.dark {
+  background: radial-gradient(circle at top left, #462257, #121212);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+body.light {
+  background: radial-gradient(circle at top left, #7b9cef, #ffffff);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
